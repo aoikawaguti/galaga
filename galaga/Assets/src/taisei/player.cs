@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class player : MonoBehaviour {
 	// Use this for initialization
-	GameObject Player;
+	//GameObject Player;
 	void Start () {
-		Player = GameObject.Find ("Player");
+		//Player = GameObject.Find ("Player");
 	}
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKey(KeyCode.RightArrow)){
+		if (Input.GetKey (KeyCode.RightArrow)) {
 			transform.position += new Vector3 (0.1f, 0);
 		}
 		if (Input.GetKey (KeyCode.LeftArrow)) {
 			transform.position += new Vector3 (-0.1f, 0);
 		}
-		Player.transform.position = (new Vector3(Mathf.Clamp (Player.transform.position.x, -6, 6)));
+		if (transform.position.x < -6.25f) {
+			transform.position = new Vector3(-6.25f,transform.position.y,0);	//移動制限（左）
+		}
+		if (transform.position.x > 6.25f) {
+			transform.position = new Vector3(6.25f,transform.position.y,0);		//移動制限（右）
+		}
 	}
 }
