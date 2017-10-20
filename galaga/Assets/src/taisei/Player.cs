@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class player : MonoBehaviour {
-	GameObject Player;
-	public bool isHitwall;
 	// Use this for initialization
+	GameObject Player;
 	void Start () {
-		Player = GameObject.Find ("Galaga_OBJ_dualFighter_0");
+		Player = GameObject.Find ("Player");
 	}
 	// Update is called once per frame
 	void Update () {
@@ -17,12 +16,6 @@ public class player : MonoBehaviour {
 		if (Input.GetKey (KeyCode.LeftArrow)) {
 			transform.position += new Vector3 (-0.1f, 0);
 		}
-		if (Input.GetKeyDown(KeyCode.RightArrow) && isHitwall==true ) 
-		{
-			GetComponent<Rigidbody2D>().AddForce( 
-				new Vector3(0, 300.0f, 0));
-			isHitwall = false;
-		}
-
+		Player.transform.position = (new Vector3(Mathf.Clamp (Player.transform.position.x, -6, 6)));
 	}
 }
