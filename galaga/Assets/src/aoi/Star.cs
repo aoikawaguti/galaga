@@ -10,9 +10,7 @@ public class Star : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Color randomColor = new Color(Random.value, Random.value, Random.value, 1.0f);
-        dia = GameObject.Find("Circle").GetComponent<Renderer>();
-        dia.material.color = randomColor;
+       
         
     }
 

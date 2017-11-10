@@ -10,10 +10,7 @@ public class Star1 : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Color randomColor = new Color(Random.value, Random.value, Random.value, 1.0f);
-        dia1 = GameObject.Find("Circle 1").GetComponent<Renderer>();
-        dia1.material.color = randomColor;
-
+        
     }
 
     // Update is called once per frame
