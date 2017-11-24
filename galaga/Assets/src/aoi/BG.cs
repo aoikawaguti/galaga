@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class BG : MonoBehaviour {
 
-    Renderer dia,dia1,dia2,dia3,dia4, dia5, dia6, dia7, dia8, dia9, dia10, dia11, dia12, dia13, dia14;
-
     int[] xaxis = new int[] { -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7 };
     int[] yaxis = new int[] { -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7 };
     public static int cnt;
 
+    Renderer dia,dia1;
+
+
     // Use this for initialization
     void Start () {
-       
+
+        Color randomColor = new Color(Random.value, Random.value, Random.value, 1.0f);
+
+        Color randomColor1 = new Color(Random.value, Random.value, Random.value, 1.0f);
+
         GameObject diamond = GameObject.Find("Circle");
 
-        GameObject star = GameObject.Find("Circle 1"); 
+        GameObject star = GameObject.Find("Circle 1");
 
-        GameObject obj = Instantiate(diamond, new Vector3(xaxis[2], yaxis[5], 0.0f), Quaternion.identity) as GameObject;
+        GameObject obj12 = Instantiate(diamond, new Vector3(xaxis[2], yaxis[5], 0.0f), Quaternion.identity) as GameObject;
         
         GameObject obj1 = Instantiate(star, new Vector3(xaxis[4], yaxis[6], 0.0f), Quaternion.identity) as GameObject;
 
@@ -41,7 +46,13 @@ public class BG : MonoBehaviour {
 
         GameObject obj11 = Instantiate(star, new Vector3(xaxis[4], yaxis[11], 0.0f), Quaternion.identity) as GameObject;
 
-        
+        dia = GameObject.Find("obj2").GetComponent<Renderer>();
+
+        dia.material.color = Color.red;
+
+        dia1 = GameObject.Find("obj1").GetComponent<Renderer>();
+
+        dia1.material.color = Color.white;
 
     }
 
