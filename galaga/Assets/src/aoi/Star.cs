@@ -34,7 +34,7 @@ public class Star : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position -= new Vector3(0, 0.07f, 0);
+        this.transform.position -= new Vector3(0, 0.04f, 0);
 
         if (this.transform.position.y <= -5)
         {
