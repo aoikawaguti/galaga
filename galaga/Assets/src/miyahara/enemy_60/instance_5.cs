@@ -33,8 +33,8 @@ public class instance_5 : MonoBehaviour {
         {*/
             
             //敵を作成する
-            Instantiate(enemy_1[enemytype]);
-            enemytype++;
+		Instantiate(enemy_1[enemyCount]);
+		enemyCount++;
        // }
     }
     // Update is called once per frame

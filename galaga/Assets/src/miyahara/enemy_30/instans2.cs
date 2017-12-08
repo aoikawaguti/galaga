@@ -41,8 +41,8 @@ public class instans2 : MonoBehaviour {
 
             //敵を作成する
            
-            Instantiate(enemy_3[enemyCount]);
-            enemyCount++;
+		Instantiate(enemy_3[enemyCount]);
+		enemyCount++;
         
     }
     void Gosa()

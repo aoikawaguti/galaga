@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 	public GameObject bulletPrefab; // 弾のオブジェクト
-	public GameObject Square;
+	public GameObject Galaga_BOSS_prefab;
 	public static int count;
 	public static int dualflg;
 	int frame;
@@ -14,11 +14,10 @@ public class Player : MonoBehaviour {
 		frame = 0;
 	}
 	void Update () {
-		　　
 		if (dualflg == 1) {		//捕まった状態
-			transform.Rotate (new Vector2(180,0));
-			transform.position = Square.transform.position;
+			transform.position = new Vector2(Galaga_BOSS_prefab.transform.position.x + 0.08f,Galaga_BOSS_prefab.transform.position.y + 0.8f);
 		}
+
 		if(dualflg == 0){		//捕まってない状態
 		frame ++;
 		if(Input.GetKey(KeyCode.Space) && count <= 1 && frame > 10)	//弾数３以上は出ない

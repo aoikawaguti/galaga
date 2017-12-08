@@ -51,12 +51,12 @@ public class NewBehaviourScript : MonoBehaviour
             //敵を作成する
             if (enemytype % 2 == 0)
             {
-               Instantiate(enemy_1[enemytype++]);
+			Instantiate(enemy_1[enemyCount++]);
 
             }
             else
             {
-                Instantiate(enemy_1[enemytype++]);
+			Instantiate(enemy_1[enemytype++]);
             }
             //enemytype++;
        

@@ -40,8 +40,8 @@ public class instansce3 : MonoBehaviour {
 
             //敵を作成する
            
-            Instantiate(enemy_4[enemytype]);
-            enemytype++;
+		Instantiate(enemy_4[enemyCount]);
+			enemyCount++;
 
 
         

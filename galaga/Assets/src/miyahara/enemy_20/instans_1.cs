@@ -36,8 +36,8 @@ public class instans_1 : MonoBehaviour {
     void Generate()
     {
                 //敵を作成する
-                Instantiate(enemy_2[enemytype]);
-            enemytype++;
+		Instantiate(enemy_2[enemyCount]);
+		enemyCount++;
                 
     }
     

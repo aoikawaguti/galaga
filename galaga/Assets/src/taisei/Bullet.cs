@@ -18,4 +18,9 @@ public class Bullet : MonoBehaviour {
 			Destroy (this.gameObject);		//弾を消す
 		}
 	}
-} 
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		Destroy(this.gameObject);   //自分を消去する
+		Player.count--;
+	}
+}
