@@ -10,7 +10,7 @@ public class Star : MonoBehaviour
     static int flg = 1;
 
     private float nextTime;
-    public float interval = 3.0f;
+    public float interval = 3.0f;//点滅用の間隔
 
     // Use this for initialization
     void Start()
