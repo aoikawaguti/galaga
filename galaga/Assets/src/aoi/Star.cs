@@ -10,24 +10,24 @@ public class Star : MonoBehaviour
     static int flg = 1;
 
     private float nextTime;
-    public float interval = 3.0f;
+    public float interval = 3.0f;//点滅用の間隔
 
     // Use this for initialization
     void Start()
     {
-        // 点滅コルーチンを実行
+        //401 点滅コルーチンを実行
         StartCoroutine("Flash");
     }
 
     private IEnumerator Flash()
     {
         Renderer renderer = GetComponent<Renderer>();
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < 100; i++)//401試験運用
         {
             renderer.enabled = !renderer.enabled;
 
-            yield return new WaitForSeconds(Random.Range(0.1f,1.0f)); // 時間(秒)を指定して待機したい場合
-                                                   // yield return null; // 1フレーム待機したい場合
+            yield return new WaitForSeconds(Random.Range(0.1f,1.0f)); //401 時間(秒)を指定して待機したい場合
+                                                   //401 yield return null; // 1フレーム待機したい場合
         }
     }
 
