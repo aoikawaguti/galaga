@@ -6,9 +6,7 @@ public class Star1 : MonoBehaviour
 {
 
     Renderer dia1;
-
-
-    // Use this for initialization
+   
     void Start()
     {
         StartCoroutine("Flash");
@@ -21,8 +19,8 @@ public class Star1 : MonoBehaviour
         {
             renderer.enabled = !renderer.enabled;
 
-            yield return new WaitForSeconds(Random.Range(0.1f,1.0f)); // 時間(秒)を指定して待機したい場合
-                                                   // yield return null; // 1フレーム待機したい場合
+            yield return new WaitForSeconds(Random.Range(0.1f,1.0f)); 
+                                                  
         }
     }
 
