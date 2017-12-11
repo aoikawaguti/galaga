@@ -110,7 +110,7 @@ public class Enemy : MonoBehaviour {
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        GameObject.Find("SCORE").SendMessage("ScoreUp");  
         Destroy(this.gameObject);   //自分を消去する
     }
 }
