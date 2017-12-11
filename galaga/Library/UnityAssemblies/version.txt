@@ -1,5 +1,6 @@
 5.5.0f3:3.1.0.0
 StandaloneWindows
+<<<<<<< HEAD
 D:/Program Files/Editor/Data/Managed/UnityEngine.dll
 D:/Program Files/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll
 D:/Program Files/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll
@@ -8,3 +9,13 @@ D:/Program Files/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.An
 D:/Program Files/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll
 D:/Program Files/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll
 D:/Program Files/Editor/Data/Managed/UnityEditor.dll
+=======
+C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll
+C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll
+C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll
+C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/PlaymodeTestsRunner/UnityEngine.PlaymodeTestsRunner.dll
+C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll
+C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll
+C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll
+C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll
+>>>>>>> a5e8818a670e32c0c123b3e2059f05a0698e7b18
