@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class 残機プログラム : MonoBehaviour {
 
+public class zankiploglum : MonoBehaviour {
+    public static int zanki_UI_6;
 	// Use this for initialization
 	void Start () {
 		
@@ -11,7 +12,7 @@ public class 残機プログラム : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        {
-            
-        }
-    }
+        Player _zanki_UI_6;
+    
+	}
+}
