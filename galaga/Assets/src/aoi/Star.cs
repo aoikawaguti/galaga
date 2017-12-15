@@ -22,7 +22,7 @@ public class Star : MonoBehaviour
     private IEnumerator Flash()
     {
         Renderer renderer = GetComponent<Renderer>();
-        for (int i = 0; i < 100; i++)//401試験運用
+        while (true)//401試験運用
         {
             renderer.enabled = !renderer.enabled;
 
@@ -31,7 +31,6 @@ public class Star : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         this.transform.position -= new Vector3(0, 0.04f, 0);

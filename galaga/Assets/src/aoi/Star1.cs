@@ -9,13 +9,20 @@ public class Star1 : MonoBehaviour
    
     void Start()
     {
+        StartCoroutine("LateStart");
         StartCoroutine("Flash");
+    }
+
+    IEnumerator LateStart(float time)
+    {
+        yield return new WaitForSeconds(time);
     }
 
     private IEnumerator Flash()
     {
         Renderer renderer = GetComponent<Renderer>();
-        for (int i = 0; i < 100; i++)//401 ここはゲームモードの変更でループ
+
+        while(true)//401 ここはゲームモードの変更でループ
         {
             renderer.enabled = !renderer.enabled;
 
@@ -27,8 +34,9 @@ public class Star1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-            this.transform.position -= new Vector3(0, 0.07f, 0);
+        StartCoroutine(LateStart(10.0f));
+
+        this.transform.position -= new Vector3(0, 0.07f, 0);
             if (this.transform.position.y <= -5)
             {
                 this.transform.position = new Vector3(this.transform.position.x, 10, 0);
