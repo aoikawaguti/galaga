@@ -41,7 +41,7 @@ public class title : MonoBehaviour {
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                SceneManager.LoadScene("Scene1");
+                SceneManager.LoadScene("Ready");
             }
 
       
