@@ -7,23 +7,22 @@ public class instance_5 : MonoBehaviour {
     public GameObject[] enemy_1;
 
     public int enemyCount;
-    public int enemytype = 0;
+ 
     //アクティブ最大数
     public int maxEnemy = 8;
-    public int ene = 1;
-
+    
     // Use this for initialization
     void Start () {
         StartCoroutine(Exec());
     }
     IEnumerator Exec()
     {
-        yield return new WaitForSeconds(8.0f);
+        yield return new WaitForSeconds(18.0f);
         while (enemyCount < maxEnemy)
         {
 
             Generate();
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.09f);
         }
     }
 
@@ -33,8 +32,8 @@ public class instance_5 : MonoBehaviour {
         {*/
             
             //敵を作成する
-            Instantiate(enemy_1[enemytype]);
-            enemytype++;
+            Instantiate(enemy_1[enemyCount]);
+            enemyCount++;
        // }
     }
     // Update is called once per frame

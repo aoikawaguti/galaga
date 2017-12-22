@@ -5,23 +5,24 @@ using UnityEngine;
 public class NewBehaviourScript : MonoBehaviour
 {
     //敵を格納
+   
     public GameObject[] enemy_1;
     
     public int enemyCount;
-    public int enemytype = 0;
+   
     //アクティブ最大数
     public int maxEnemy = 4;
-    public int ene = 1;
+ 
     public int Speed = 5;
     int a;
-
+    public int n; 
     // Use this for initialization
     void Start()
     {
         
         //周期的に実行したい場合はコルーチン
         StartCoroutine(Exec());
-        StartCoroutine(kougeki());
+        //StartCoroutine(kougeki());
     }
     //敵を作成する
     IEnumerator Exec()
@@ -29,9 +30,9 @@ public class NewBehaviourScript : MonoBehaviour
         while (enemyCount < maxEnemy)
         {
             Generate();
-            yield return new WaitForSeconds(0.1f);//0.05
-            Attack();
-            //yield return new WaitForSeconds(8.0f);
+            yield return new WaitForSeconds(0.1f);
+           
+           
            
         }
         
@@ -40,33 +41,30 @@ public class NewBehaviourScript : MonoBehaviour
     {
        
         Attack();
-        yield return null;
+        yield return new WaitForSeconds(10.0f);
 
+       
     }
 
     void Generate()
     {
-       
-
             //敵を作成する
-            if (enemytype % 2 == 0)
-            {
-               Instantiate(enemy_1[enemytype++]);
-
-            }
-            else
-            {
-                Instantiate(enemy_1[enemytype++]);
-            }
-            //enemytype++;
+          
+           
+        Instantiate(enemy_1[enemyCount]);
+        enemyCount++;
        
     }
     void Attack()
     {
+       /* n = Random.Range(1, 5);
+        switch (n)
+        {
+            case 1:
+               
+          
+        }*/
         
-        a = (int)(Time.time % 2);
-        if (a == 0) transform.Translate(new Vector3(0.1f, 0f, 0) * Time.deltaTime * Speed);
-        else transform.Translate(new Vector3(-0.1f, 0f, 0) * Time.deltaTime * Speed);
 
     }
     // Update is called once per frameans

@@ -8,10 +8,9 @@ public class instansce3 : MonoBehaviour {
 
     //アクティブ最大数
     public int maxEnemy4 = 8;
-    public int ene = 1;
-
+  
     public int enemyCount;
-    public int enemytype = 0;
+   
 
     // Use this for initialization
     void Start()
@@ -25,12 +24,12 @@ public class instansce3 : MonoBehaviour {
     //敵を作成する
     IEnumerator Exec()
     {
-        yield return new WaitForSeconds(4.0f);
+        yield return new WaitForSeconds(9.0f);
         while (enemyCount < maxEnemy4)
         {
            
             Generate();
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.18f);
 
         }
     }
@@ -40,8 +39,8 @@ public class instansce3 : MonoBehaviour {
 
             //敵を作成する
            
-            Instantiate(enemy_4[enemytype]);
-            enemytype++;
+            Instantiate(enemy_4[enemyCount]);
+            enemyCount++;
 
 
         
