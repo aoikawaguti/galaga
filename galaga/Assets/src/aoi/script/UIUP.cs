@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class UIt : MonoBehaviour {
+public class UIUP : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +18,8 @@ public class UIt : MonoBehaviour {
             {
                 transform.position = new Vector3(475, 330, 0);
             }
-            transform.position += new Vector3(0, 3.5f, 0);
+            transform.position += new Vector3(0, 3.6f, 0);
+
         }
     }
 }

@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class STOP_Star : MonoBehaviour {
 
+    public static float READY_time;
 
-    
+
+
 
     // Use this for initialization
     void Start () {
@@ -29,11 +31,10 @@ public class STOP_Star : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        float time;
 
-        time = Time.time;
+        READY_time += Time.deltaTime;
 
-        if(time >= 30f)
+        if (READY_time >= 260f)
         {
             SceneManager.LoadScene("Scene1");
         }
