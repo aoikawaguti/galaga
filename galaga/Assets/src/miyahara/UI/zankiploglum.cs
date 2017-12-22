@@ -19,7 +19,10 @@ public class zankiploglum: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+       
+        {
+            Destroy(copied2, 4f);
+        }
     }
 }
     
