@@ -26,12 +26,12 @@ public class title : MonoBehaviour {
 
         blink_obj = GameObject.Find("galaga01").GetComponent<Renderer>();
 
-        if (this.transform.position.y <= 1)
+        if (this.transform.position.y <= 0.8f)
         {
 
             if (Input.GetKeyUp(KeyCode.Space))
             {
-                this.transform.position = new Vector3(0, 1, 0);
+                this.transform.position = new Vector3(0, 0.8f, 0);
             }
             this.transform.position += new Vector3(0, 0.05f, 0);
 

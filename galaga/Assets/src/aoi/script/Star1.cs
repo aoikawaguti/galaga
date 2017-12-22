@@ -9,13 +9,8 @@ public class Star1 : MonoBehaviour
    
     void Start()
     {
-        StartCoroutine("LateStart");
-        StartCoroutine("Flash");
-    }
 
-    IEnumerator LateStart(float time)
-    {
-        yield return new WaitForSeconds(time);
+        StartCoroutine("Flash");
     }
 
     private IEnumerator Flash()
@@ -34,8 +29,7 @@ public class Star1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(LateStart(10.0f));
-
+        
         this.transform.position -= new Vector3(0, 0.07f, 0);
             if (this.transform.position.y <= -5)
             {
