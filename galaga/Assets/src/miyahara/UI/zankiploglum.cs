@@ -6,8 +6,8 @@ using UnityEngine;
 public class zankiploglum: MonoBehaviour
 {
     public GameObject original;
-    public GameObject copied;
-    public GameObject copied2;
+    public GameObject copied;　 //残機
+    public GameObject copied2;  //残機２
     // Use this for initialization
     void Start()
     {
@@ -22,6 +22,8 @@ public class zankiploglum: MonoBehaviour
        
         {
             Destroy(copied2, 4f);
+
+            //if(bullet ) ←弾に当たった時の処理
         }
     }
 }
