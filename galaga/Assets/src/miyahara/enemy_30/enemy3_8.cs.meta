@@ -1,10 +1,12 @@
 fileFormatVersion: 2
 guid: 5a85fe31008c78a4f927d60e1e24d462
-timeCreated: 1511100244
+timeCreated: 1515460560
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - StandbySprite: {fileID: 21300012, guid: f27e06f6d52041b4f864e7e6a060cc6a, type: 3}
+  - HoldSprite: {fileID: 21300010, guid: f27e06f6d52041b4f864e7e6a060cc6a, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

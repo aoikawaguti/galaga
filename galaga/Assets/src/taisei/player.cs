@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+<<<<<<< HEAD
 public class Player : MonoBehaviour {
 	public GameObject bulletPrefab;
 	public GameObject Galaga_BOSS_prefab;//BOSS敵
@@ -31,6 +32,19 @@ public class Player : MonoBehaviour {
         Player_tuibi = 0;
         animframe = 0;
     }
+=======
+public class player : MonoBehaviour {
+	public GameObject bulletPrefab; // 弾のオブジェクト
+	public GameObject Square;
+	public static int count;
+	public static int dualflg;
+	int frame;
+
+	void Start () {
+		dualflg = 0;	//0　操作可能　１　操作不能　2　dual状態
+		frame = 0;
+	}
+>>>>>>> 3d2a31326eaee95d7d85533b5e4235d9bb07ca94
 	void Update () {
         
         //Debug.Log(dualflg);
@@ -59,6 +73,7 @@ public class Player : MonoBehaviour {
 		if (transform.position.x > 6.25f) {
 			transform.position = new Vector3 (6.25f, transform.position.y, 0);		//移動制限（右）
 			}
+<<<<<<< HEAD
         }
 
         if (dualflg == 1){  //捕まった状態	
@@ -129,5 +144,13 @@ public class Player : MonoBehaviour {
 			animframe = 0;
             dualflg = 0;
         }
+=======
+		}
+	}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+       
+        Destroy(this.gameObject);   //自分を消去する
+>>>>>>> 3d2a31326eaee95d7d85533b5e4235d9bb07ca94
     }
 }

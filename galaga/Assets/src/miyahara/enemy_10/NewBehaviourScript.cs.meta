@@ -1,14 +1,12 @@
 fileFormatVersion: 2
 guid: 5e7d22fe7cb71d14a846bdd092af36b9
-timeCreated: 1511489709
+timeCreated: 1513929959
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
-  - enemy_11: {fileID: 1703477542542256, guid: d809fa4a36991c54eabe83c8f63a6186, type: 2}
-  - enemy_12: {fileID: 1176892519419410, guid: d930cd3a9a8577244a4451fbba49e4a8, type: 2}
-  - enemy_13: {fileID: 1944381453913358, guid: a46652ace8d6b924f938a37276ac1ad2, type: 2}
-  - enemy_14: {fileID: 1128129874322192, guid: f05ec4c85097fa147b35b34876578fa9, type: 2}
+  - StandbySprite: {fileID: 21300000, guid: f27e06f6d52041b4f864e7e6a060cc6a, type: 3}
+  - HoldSprite: {fileID: 21300002, guid: f27e06f6d52041b4f864e7e6a060cc6a, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
