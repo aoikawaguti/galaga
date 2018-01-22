@@ -84,32 +84,69 @@ public class Enemy : MonoBehaviour {
     public Bezier5 myBezier9;
     private float t = 0f;
     private float t2 = 0f;
-    public int Speed = 5;
-    int a;
-    int flg;
-    double cnt;
-    int e = 101;
-    void Start() {
-     
-        myBezier = new Bezier(new Vector3(2f, 6f, 0f), new Vector3(1f, -5f, 0f), new Vector3(-4f, 4f, 0f), new Vector3(-5f, -1f, 0f));
-       // StartCoroutine(kougeki());
-        myBezier9 = new Bezier5(new Vector3(-5f, -1f, 0f), new Vector3(4f, -4f, 0f), new Vector3(0f, 0f, 0f), new Vector3(0.8f, 2.1f, 0f));
-      
+    public float Speed = 2f;
 
+    public static int flg;
+    double cnt;
+    int cnt2;
+    int e = 101;
+    public bool zako;
+    SpriteRenderer MainSpriteRenderer;
+    public Sprite StandbySprite;
+    public Sprite HoldSprite;
+    public int h_flg = -1;
+    int cnt3;
+    void Start() {
+        MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+
+        myBezier = new Bezier(new Vector3(2f, 6f, 0f), new Vector3(1f, -5f, 0f), new Vector3(-3f, 3f, 0f), new Vector3(-5f, -1f, 0f));
        
+        myBezier9 = new Bezier5(new Vector3(-5f, -1f, 0f), new Vector3(3f, -2f, 0f), new Vector3(0f, 0f, 0f), new Vector3(0.8f, 2.1f, 0f));
+        //StartCoroutine(kougeki());
+       
+
     }
-    /*IEnumerator kougeki()
+   
+
+      
+    
+    IEnumerator kougeki()
     {
+            yield return new WaitForSeconds(23f);
+        while (true)
+        {
+            zako = true;
+            GetComponent<Animator>().SetBool("zako",zako);
+            cnt2++;
+            if (cnt2 == 100)
+            {
+                break ;
+               
+            }
            
-            yield return null;
         }
       
-    }*/
-    
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+        cnt3++;
+        if (e4.cnt3 >= 20)
+        {
+            h_flg *= -1;
+            cnt3 = 0;
+        }
+
+        if (h_flg == -1)
+        {
+            MainSpriteRenderer.sprite = StandbySprite;
+        }
+        else
+        {
+            MainSpriteRenderer.sprite = HoldSprite;
+        }
+
         if (flg == 0)//ベジエ曲線中間点まで
         {
             Vector3 vec = myBezier.GetPointAtTime(t);
@@ -146,13 +183,45 @@ public class Enemy : MonoBehaviour {
                 flg = 2;
             }
         }
-
-        if (flg == 2)//定位置に着いた後、横移動
+        if (e4.flg == 2)//定位置に着いた後、横移動
         {
-            a = (int)(Time.time % 2);
-            if (a == 0) transform.Translate(new Vector3(0.05f, 0f, 0) * Time.deltaTime * Speed);
-            else transform.Translate(new Vector3(-0.05f, 0f, 0) * Time.deltaTime * Speed);
+            if (cnt2 < 100)
+            {
+                cnt2++;
+                transform.position += new Vector3(0.04f, 0f, 0f) * Time.deltaTime * Speed;
+                if (cnt2 == 100)
+                {
+                    cnt2 = 0;
+
+                }
+            }
+            if (cnt2 < 180)
+            {
+                cnt2++;
+                transform.position += new Vector3(-0.04f, 0f, 0f) * Time.deltaTime * Speed;
+            }
+            else 
+            {
+                cnt2 = 0;
+                flg = 3;
+               
+            }
         }
+        if (e4.flg == 3)
+        {
+            if (cnt2 < 180)
+            {
+                cnt2++;
+                transform.position += new Vector3(0.04f, 0f, 0f) * Time.deltaTime * Speed;
+            }
+           else
+            {
+                cnt2 = 0;
+                flg = 2;
+               
+            }
+        }
+
 
         //弾の生成
         frame++;
@@ -161,9 +230,10 @@ public class Enemy : MonoBehaviour {
             Instantiate(bullet_teki, new Vector2(transform.position.x - 0.1f, transform.position.y), Quaternion.identity); // 敵の位置に弾を生成します
             frame = 0;
         }
-       
-    }
 
+    }
+    
+          
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject.Find("SCORE").SendMessage("ScoreUp");//scriptSCOREのScoreUp関数呼び出し

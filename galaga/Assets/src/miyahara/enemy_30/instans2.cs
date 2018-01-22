@@ -31,7 +31,7 @@ public class instans2 : MonoBehaviour {
         {
           
             
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.18f);
             Generate();
         }
     }

@@ -74,7 +74,7 @@ public class Bezier10 : System.Object
 }
     //401 アルファベット　数字ともに地続きに制約
 public class enemy3_1 : MonoBehaviour {
-    public enemy3_8 enemy3_8;
+    public enemy3_4 enemy3_4;
     public Bezier myBezier9;
     public Bezier5 myBezier10;
     public Bezier10 myBezier11;
@@ -85,11 +85,17 @@ public class enemy3_1 : MonoBehaviour {
     double cnt;
     double e = 101;
     int a;
-    
+    int cnt2;
+    SpriteRenderer MainSpriteRenderer;
+    public Sprite StandbySprite;
+    public Sprite HoldSprite;
+    public int h_flg = -1;
+    int cnt3;
     // Use this for initialization
     void Start () {
-        myBezier9 = new Bezier(new Vector3(-7f, -5f, 0f), new Vector3(14f, 6f, 0f), new Vector3(-4f, 6f, 0f), new Vector3(-5f, -1f, 0f));
-        myBezier10 = new Bezier5(new Vector3(-5f, -1f, 0f), new Vector3(4f, -2f, 0f), new Vector3(1f, -2f, 0f), new Vector3(-1.4f, 4.5f, 0f));
+        MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        myBezier9 = new Bezier(new Vector3(-6.5f, -5.5f, 0f), new Vector3(11.5f, 6f, 0f), new Vector3(-0.9f, 5f, 0f), new Vector3(-5f, -0.5f, 0f));
+        myBezier10 = new Bezier5(new Vector3(-5f, -0.5f, 0f), new Vector3(2f, -4f, 0f), new Vector3(0.4f, -1.5f, 0f), new Vector3(-1.4f, 4.5f, 0f));
 
         //StartCoroutine(Exec2());
      
@@ -124,7 +130,21 @@ public class enemy3_1 : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        cnt3++;
+        if (enemy3_8.cnt3 >= 20)
+        {
+            h_flg *= -1;
+            cnt3 = 0;
+        }
 
+        if (h_flg == -1)
+        {
+            MainSpriteRenderer.sprite = StandbySprite;
+        }
+        else
+        {
+            MainSpriteRenderer.sprite = HoldSprite;
+        }
         if (flg == 0)
         {
             Vector3 vec = myBezier9.GetPointAtTime(t);
@@ -159,12 +179,43 @@ public class enemy3_1 : MonoBehaviour {
                 flg = 2;
             }
         }
-      
-        if (enemy3_8.flg21 == 2)
+
+        if (enemy3_8.flg == 2)//定位置に着いた後、横移動
         {
-            a = (int)(Time.time % 2);
-            if (a == 0) transform.Translate(new Vector3(-0.05f, 0f, 0) * Time.deltaTime * Speed);
-            else transform.Translate(new Vector3(0.05f, 0f, 0) * Time.deltaTime * Speed);
+            if (cnt2 < 50)
+            {
+                cnt2++;
+                transform.position += new Vector3(0.04f, 0f, 0f) * Time.deltaTime * Speed;
+                if (cnt2 == 50)
+                {
+                    cnt2 = 0;
+                }
+            }
+            if (cnt2 < 180)
+            {
+                cnt2++;
+                transform.position += new Vector3(0.04f, 0f, 0f) * Time.deltaTime * Speed;
+            }
+            else
+            {
+                cnt2 = 0;
+              
+
+            }
+        }
+        if (enemy3_8.flg == 3)
+        {
+            if (cnt2 < 180)
+            {
+                cnt2++;
+                transform.position += new Vector3(-0.04f, 0f, 0f) * Time.deltaTime * Speed;
+            }
+            else
+            {
+                cnt2 = 0;
+               
+
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

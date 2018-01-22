@@ -7,15 +7,17 @@ public class NewBehaviourScript : MonoBehaviour
     //敵を格納
    
     public GameObject[] enemy_1;
-    
-    public int enemyCount;
+
+    public int enemyCount = 0;
    
     //アクティブ最大数
     public int maxEnemy = 4;
  
     public int Speed = 5;
     int a;
-    public int n; 
+    public int n;
+
+    
     // Use this for initialization
     void Start()
     {
@@ -29,8 +31,9 @@ public class NewBehaviourScript : MonoBehaviour
     {
         while (enemyCount < maxEnemy)
         {
-            Generate();
             yield return new WaitForSeconds(0.1f);
+            Generate();
+            
            
            
            
@@ -70,7 +73,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frameans
     void Update()
     {
-        
+       
     }
 
 }

@@ -8,17 +8,24 @@ public class e61 : MonoBehaviour {
     private float t = 0f;
     private float t2 = 0f;
     public Vector3 pos;
-    public int Speed = 5;
+    public int Speed = 1;
     int a;
     int flg;
     double cnt;
+    int cnt2;
     int e = 101;
     public GameObject bullet_teki; // 弾のオブジェクト
     int frame;
+    SpriteRenderer MainSpriteRenderer;
+    public Sprite StandbySprite;
+    public Sprite HoldSprite;
+    public int h_flg = -1;
+    int cnt3;
     // Use this for initialization
     void Start () {
-        myBezier5 = new Bezier(new Vector3(2f, 6f, 0f), new Vector3(1f, -5f, 0f), new Vector3(-4f, 4f, 0f), new Vector3(-5f, -1f, 0f));
-        myBezier9 = new Bezier5(new Vector3(-5f, -1f, 0f), new Vector3(4f, -4f, 0f), new Vector3(0f, 0f, 0f), new Vector3(2.4f, 2.1f, 0f));
+        MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        myBezier5 = new Bezier(new Vector3(2f, 6f, 0f), new Vector3(1f, -5f, 0f), new Vector3(-3f, 3f, 0f), new Vector3(-5f, -1f, 0f));
+        myBezier9 = new Bezier5(new Vector3(-5f, -1f, 0f), new Vector3(3f, -2f, 0f), new Vector3(0f, 0f, 0f), new Vector3(2.4f, 2.1f, 0f));
         //StartCoroutine(Exec2());
     }
     IEnumerator Exec2()
@@ -42,6 +49,21 @@ public class e61 : MonoBehaviour {
     }
     // Update is called once per frame
     void Update () {
+        cnt3++;
+        if (e68.cnt3 >= 20)
+        {
+            h_flg *= -1;
+            cnt3 = 0;
+        }
+
+        if (h_flg == -1)
+        {
+            MainSpriteRenderer.sprite = StandbySprite;
+        }
+        else
+        {
+            MainSpriteRenderer.sprite = HoldSprite;
+        }
         if (flg == 0)
         {
             Vector3 vec = myBezier5.GetPointAtTime(t);
@@ -77,11 +99,33 @@ public class e61 : MonoBehaviour {
             }
         }
 
-        if (flg == 2)
+        if (e68.flg == 2)//定位置に着いた後、横移動
         {
-            a = (int)(Time.time % 2);
-            if (a == 0) transform.Translate(new Vector3(0.05f, 0f, 0) * Time.deltaTime * Speed);
-            else transform.Translate(new Vector3(-0.05f, 0f, 0) * Time.deltaTime * Speed);
+            if (cnt2 < 180)
+            {
+                cnt2++;
+                transform.position += new Vector3(0.04f, 0f, 0f) * Time.deltaTime * Speed;
+            }
+            else
+            {
+                cnt2 = 0;
+                flg = 3;
+
+            }
+        }
+        if (e68.flg == 3)
+        {
+            if (cnt2 < 180)
+            {
+                cnt2++;
+                transform.position += new Vector3(-0.04f, 0f, 0f) * Time.deltaTime * Speed;
+            }
+            else
+            {
+                cnt2 = 0;
+                flg = 2;
+
+            }
         }
 
 

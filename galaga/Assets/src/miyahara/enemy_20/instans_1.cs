@@ -28,9 +28,9 @@ public class instans_1 : MonoBehaviour {
     {
         while (enemyCount < maxEnemy2)
         {
-          
-            Generate();
             yield return new WaitForSeconds(0.1f);
+            Generate();
+           
         }
     }
     void Generate()

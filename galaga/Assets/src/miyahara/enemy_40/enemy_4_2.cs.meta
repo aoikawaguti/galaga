@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: d1297bee048396c43a5c8b5f6e822486
-timeCreated: 1511135414
+timeCreated: 1515460656
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - enemy_4: {instanceID: 0}
+  - StandbySprite: {fileID: 21300012, guid: f27e06f6d52041b4f864e7e6a060cc6a, type: 3}
+  - HoldSprite: {fileID: 21300010, guid: f27e06f6d52041b4f864e7e6a060cc6a, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

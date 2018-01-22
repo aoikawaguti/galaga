@@ -13,11 +13,18 @@ public class enemy4_4 : MonoBehaviour {
     double flg4 = 0;
     double cnt9;
     double e = 101;
+    SpriteRenderer MainSpriteRenderer;
+    public Sprite StandbySprite;
+    public Sprite HoldSprite;
+    public int h_flg = -1;
+    int cnt3;
+    int cnt2;
     // Use this for initialization
     void Start () {
+        MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         //StartCoroutine(CoroutineSample());
-        myBezier10 = new Bezier(new Vector3(7f, -5f, 0f), new Vector3(-14f, 6f, 0f), new Vector3(4f, 6f, 0f), new Vector3(5f, -1f, 0f));
-        myBezier11 = new Bezier5(new Vector3(5f, -1f, 0f), new Vector3(-4f, -2f, 0f), new Vector3(-1f, -2f, 0f), new Vector3(2.4f, 2.9f, 0f));
+        myBezier10 = new Bezier(new Vector3(6.5f, -5.5f, 0f), new Vector3(-11.5f, 6f, 0f), new Vector3(0.9f, 5f, 0f), new Vector3(5f, -0.5f, 0f));
+        myBezier11 = new Bezier5(new Vector3(5f, -0.5f, 0f), new Vector3(-2f, -4f, 0f), new Vector3(-0.4f, -1.5f, 0f), new Vector3(2.4f, 2.9f, 0f));
     }
     IEnumerator CoroutineSample()
     {
@@ -40,8 +47,22 @@ public class enemy4_4 : MonoBehaviour {
     }
     // Update is called once per frame
     void Update () {
-      
-        
+        cnt3++;
+        if (enemy4_8.cnt3 >= 20)
+        {
+            h_flg *= -1;
+            cnt3 = 0;
+        }
+
+        if (h_flg == -1)
+        {
+            MainSpriteRenderer.sprite = StandbySprite;
+        }
+        else
+        {
+            MainSpriteRenderer.sprite = HoldSprite;
+        }
+
         if (flg4 == 0)
         {
             Vector3 vec = myBezier10.GetPointAtTime(t);
@@ -76,11 +97,33 @@ public class enemy4_4 : MonoBehaviour {
                 flg4 = 2;
             }
         }
-        if (enemy_4.flg21 == 2)
+        if (enemy4_8.flg == 2)//定位置に着いた後、横移動
         {
-            a = (int)(Time.time % 2);
-            if (a == 0) transform.Translate(new Vector3(0.05f, 0f, 0) * Time.deltaTime * Speed);
-            else transform.Translate(new Vector3(-0.05f, 0f, 0) * Time.deltaTime * Speed);
+            if (cnt2 < 180)
+            {
+                cnt2++;
+                transform.position += new Vector3(0.04f, 0f, 0f) * Time.deltaTime * Speed;
+            }
+            else
+            {
+                cnt2 = 0;
+
+
+            }
+        }
+        if (enemy4_8.flg == 3)
+        {
+            if (cnt2 < 180)
+            {
+                cnt2++;
+                transform.position += new Vector3(-0.04f, 0f, 0f) * Time.deltaTime * Speed;
+            }
+            else
+            {
+                cnt2 = 0;
+
+
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
