@@ -19,7 +19,7 @@ public class e68 : MonoBehaviour {
     public Sprite HoldSprite;
     public int h_flg = -1;
     public static int cnt3;
-    int cnt2;
+    public static int cnt2;
     // Use this for initialization
     void Start () {
         MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
@@ -55,7 +55,7 @@ public class e68 : MonoBehaviour {
             cnt3 = 0;
         }
 
-        if (h_flg == -1)
+        if (h_flg == 1)
         {
             MainSpriteRenderer.sprite = StandbySprite;
         }
@@ -122,11 +122,15 @@ public class e68 : MonoBehaviour {
             else
             {
                 cnt2 = 0;
-                flg = 2;
+                flg = 4;
 
             }
         }
+        if (flg == 4)
+        {
+            cnt2 = 200;
 
+        }
         frame++;
         if (frame == 200)
         {

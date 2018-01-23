@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class player : MonoBehaviour {
 	public GameObject bulletPrefab; // 弾のオブジェクト
 	public GameObject Square;
 	public static int count;

@@ -17,7 +17,7 @@ public class instance_5 : MonoBehaviour {
     }
     IEnumerator Exec()
     {
-        yield return new WaitForSeconds(18.0f);
+        yield return new WaitForSeconds(24.0f);
         while (enemyCount < maxEnemy)
         {
 

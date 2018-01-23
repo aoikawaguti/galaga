@@ -56,7 +56,7 @@ public class enemy_4 : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         cnt3++;
-        if (cnt3 >= 20)
+        if (enemy4_8.cnt3 >= 20)
         {
             h_flg *= -1;
             cnt3 = 0;

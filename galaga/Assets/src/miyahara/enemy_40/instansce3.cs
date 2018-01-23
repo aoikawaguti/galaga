@@ -24,7 +24,7 @@ public class instansce3 : MonoBehaviour {
     //敵を作成する
     IEnumerator Exec()
     {
-        yield return new WaitForSeconds(9.0f);
+        yield return new WaitForSeconds(11f);
         while (enemyCount < maxEnemy4)
         {
            

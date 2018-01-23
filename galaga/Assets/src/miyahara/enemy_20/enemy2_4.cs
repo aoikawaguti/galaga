@@ -182,16 +182,7 @@ public class enemy2_4 : MonoBehaviour {
 
         if (flg == 2)//定位置に着いた後、横移動
         {
-            if (One)
-            {
-                if (cnt2 < 5)
-                {
-                    
-                    transform.position += new Vector3(-0.04f, 0f, 0f) * Time.deltaTime * Speed;
-                    cnt2 = 0;
-                    One = false;
-                }
-            }
+            
             if (cnt2 < 180)
             {
                 cnt2++;
@@ -218,7 +209,11 @@ public class enemy2_4 : MonoBehaviour {
 
             }
         }
-
+        if (e68.flg == 4)
+        {
+            flg = 4;
+            cnt2 = 200;
+        }
 
 
         frame++;

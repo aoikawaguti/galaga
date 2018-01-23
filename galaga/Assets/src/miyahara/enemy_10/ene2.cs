@@ -93,16 +93,7 @@ public class ene2 : MonoBehaviour {
 
         if (e4.flg == 2)//定位置に着いた後、横移動
         {
-            if (One)
-            {
-                if (cnt2 < 5)
-                {
-                    
-                    transform.position += new Vector3(-0.04f, 0f, 0f) * Time.deltaTime * Speed;
-                    cnt2 = 0;
-                    One = false;
-                }
-            }
+            
             if (cnt2 < 180)
             {
                 cnt2++;

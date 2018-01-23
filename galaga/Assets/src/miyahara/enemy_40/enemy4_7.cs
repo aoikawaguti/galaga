@@ -24,7 +24,7 @@ public class enemy4_7 : MonoBehaviour {
         MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         //StartCoroutine(CoroutineSample());
         myBezier10 = new Bezier(new Vector3(6.5f, -5.5f, 0f), new Vector3(-11.5f, 6f, 0f), new Vector3(0.9f, 5f, 0f), new Vector3(5f, -0.5f, 0f));
-        myBezier11 = new Bezier5(new Vector3(5f, -0.5f, 0f), new Vector3(-2f, -4f, 0f), new Vector3(-0.4f, -1.5f, 0f), new Vector3(-2.4f, 3.7f, 0f));
+        myBezier11 = new Bezier5(new Vector3(5f, -0.5f, 0f), new Vector3(-2f, -4f, 0f), new Vector3(-0.4f, -1.5f, 0f), new Vector3(-1.6f, 3.7f, 0f));
     }
     IEnumerator CoroutineSample()
     {

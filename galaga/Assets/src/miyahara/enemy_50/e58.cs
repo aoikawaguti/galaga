@@ -57,7 +57,7 @@ public class e58 : MonoBehaviour {
             cnt3 = 0;
         }
 
-        if (h_flg == -1)
+        if (h_flg == 1)
         {
             MainSpriteRenderer.sprite = StandbySprite;
         }
@@ -128,7 +128,11 @@ public class e58 : MonoBehaviour {
 
             }
         }
-
+        if (e68.flg == 4)
+        {
+            flg = 4;
+            cnt2 = 200;
+        }
 
 
         frame++;

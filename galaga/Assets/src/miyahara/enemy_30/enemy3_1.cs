@@ -137,7 +137,7 @@ public class enemy3_1 : MonoBehaviour {
             cnt3 = 0;
         }
 
-        if (h_flg == -1)
+        if (h_flg == 1)
         {
             MainSpriteRenderer.sprite = StandbySprite;
         }
@@ -191,7 +191,7 @@ public class enemy3_1 : MonoBehaviour {
             else
             {
                 cnt2 = 0;
-              
+                flg = 3;
 
             }
         }
@@ -205,7 +205,7 @@ public class enemy3_1 : MonoBehaviour {
             else
             {
                 cnt2 = 0;
-               
+                flg = 2;
 
             }
         }
