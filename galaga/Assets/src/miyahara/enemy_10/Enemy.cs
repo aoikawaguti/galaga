@@ -77,6 +77,7 @@ public class Bezier : System.Object
 }
 
 public class Enemy : MonoBehaviour {
+    bool One;
 
     public GameObject bullet_teki; // 弾のオブジェクト
     int frame;
@@ -98,6 +99,7 @@ public class Enemy : MonoBehaviour {
     int cnt3;
     void Start() {
         MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        One = true;
 
         myBezier = new Bezier(new Vector3(2f, 6f, 0f), new Vector3(1f, -5f, 0f), new Vector3(-3f, 3f, 0f), new Vector3(-5f, -1f, 0f));
        
@@ -138,7 +140,7 @@ public class Enemy : MonoBehaviour {
             cnt3 = 0;
         }
 
-        if (h_flg == -1)
+        if (h_flg == 1)
         {
             MainSpriteRenderer.sprite = StandbySprite;
         }
@@ -185,20 +187,21 @@ public class Enemy : MonoBehaviour {
         }
         if (e4.flg == 2)//定位置に着いた後、横移動
         {
-            if (cnt2 < 100)
-            {
-                cnt2++;
-                transform.position += new Vector3(0.04f, 0f, 0f) * Time.deltaTime * Speed;
-                if (cnt2 == 100)
-                {
-                    cnt2 = 0;
 
+            if (One)
+            {
+                if (cnt2 < 5)
+                {
+                    
+                    transform.position += new Vector3(-0.04f, 0f, 0f) * Time.deltaTime * Speed;
+                    cnt2 = 0;
+                    One = false;
                 }
             }
             if (cnt2 < 180)
             {
                 cnt2++;
-                transform.position += new Vector3(-0.04f, 0f, 0f) * Time.deltaTime * Speed;
+                transform.position += new Vector3(0.04f, 0f, 0f) * Time.deltaTime * Speed;
             }
             else 
             {
@@ -212,7 +215,7 @@ public class Enemy : MonoBehaviour {
             if (cnt2 < 180)
             {
                 cnt2++;
-                transform.position += new Vector3(0.04f, 0f, 0f) * Time.deltaTime * Speed;
+                transform.position += new Vector3(-0.04f, 0f, 0f) * Time.deltaTime * Speed;
             }
            else
             {

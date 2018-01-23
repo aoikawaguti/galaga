@@ -99,26 +99,18 @@ public class enemy3_8 : MonoBehaviour {
         }
         if (flg == 2)//定位置に着いた後、横移動
         {
-            if (cnt2 < 50)
-            {
-                cnt2++;
-                transform.position += new Vector3(0.04f, 0f, 0f) * Time.deltaTime * Speed;
-                if (cnt2 == 50)
+          
+                if (cnt2 < 180)
+                {
+                    cnt2++;
+                    transform.position += new Vector3(0.04f, 0f, 0f) * Time.deltaTime * Speed;
+                }
+                else
                 {
                     cnt2 = 0;
-                }
-            }
-            if (cnt2 < 180)
-            {
-                cnt2++;
-                transform.position += new Vector3(0.04f, 0f, 0f) * Time.deltaTime * Speed;
-            }
-            else
-            {
-                cnt2 = 0;
-                flg = 3;
+                    flg = 3;
 
-            }
+                }
         }
         if (flg == 3)
         {

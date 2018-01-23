@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 public class Player : MonoBehaviour {
 	public GameObject bulletPrefab;
 	public GameObject Galaga_BOSS_prefab;//BOSS敵
@@ -34,6 +35,9 @@ public class Player : MonoBehaviour {
     }
 =======
 public class player : MonoBehaviour {
+=======
+public class Player : MonoBehaviour {
+>>>>>>> 9cc66866e5a1c1d8c83f4ede9ebde44d10836eb4
 	public GameObject bulletPrefab; // 弾のオブジェクト
 	public GameObject Square;
 	public static int count;

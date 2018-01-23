@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ene2 : MonoBehaviour {
+    bool One;
     public e4 e4;
     public Bezier myBezier2;
     public Bezier5 myBezier9;
@@ -25,6 +26,7 @@ public class ene2 : MonoBehaviour {
     void Start () {
 
         MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        One = true;
         myBezier2 = new Bezier(new Vector3(2f, 6f, 0f), new Vector3(1f, -5f, 0f), new Vector3(-3f, 3f, 0f), new Vector3(-5f, -1f, 0f));
         //StartCoroutine(kougeki());
         myBezier9 = new Bezier5(new Vector3(-5f, -1f, 0f), new Vector3(3f, -2f, 0f), new Vector3(0f, 0f, 0f), new Vector3(0f, 2.1f, 0f));
@@ -46,7 +48,7 @@ public class ene2 : MonoBehaviour {
             cnt3 = 0;
         }
 
-        if (h_flg == -1)
+        if (h_flg == 1)
         {
             MainSpriteRenderer.sprite = StandbySprite;
         }
@@ -91,19 +93,20 @@ public class ene2 : MonoBehaviour {
 
         if (e4.flg == 2)//定位置に着いた後、横移動
         {
-            if (cnt2 < 100)
+            if (One)
             {
-                cnt2++;
-                transform.position += new Vector3(0.04f, 0f, 0f) * Time.deltaTime * Speed;
-                if (cnt2 == 100)
+                if (cnt2 < 5)
                 {
+                    
+                    transform.position += new Vector3(-0.04f, 0f, 0f) * Time.deltaTime * Speed;
                     cnt2 = 0;
+                    One = false;
                 }
             }
             if (cnt2 < 180)
             {
                 cnt2++;
-                transform.position += new Vector3(-0.04f, 0f, 0f) * Time.deltaTime * Speed;
+                transform.position += new Vector3(0.04f, 0f, 0f) * Time.deltaTime * Speed;
             }
             else
             {
@@ -118,7 +121,7 @@ public class ene2 : MonoBehaviour {
             if (cnt2 < 180)
             {
                 cnt2++;
-                transform.position += new Vector3(0.04f, 0f, 0f) * Time.deltaTime * Speed;
+                transform.position += new Vector3(-0.04f, 0f, 0f) * Time.deltaTime * Speed;
             }
             else
             {
