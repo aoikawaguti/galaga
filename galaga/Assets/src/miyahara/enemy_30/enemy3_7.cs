@@ -24,7 +24,7 @@ public class enemy3_7 : MonoBehaviour {
     void Start () {
         MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         myBezier9 = new Bezier(new Vector3(-6.5f, -5.5f, 0f), new Vector3(11.5f, 6f, 0f), new Vector3(-0.9f, 5f, 0f), new Vector3(-5f, -0.5f, 0f));
-        myBezier10 = new Bezier5(new Vector3(-5f, -0.5f, 0f), new Vector3(2f, -4f, 0f), new Vector3(0.4f, -1.5f, 0f), new Vector3(1.6f, 2.9f, 0f));
+        myBezier10 = new Bezier5(new Vector3(-5f, -0.5f, 0f), new Vector3(2f, -4f, 0f), new Vector3(0.4f, -1.5f, 0f), new Vector3(1.4f, 2.9f, 0f));
         //StartCoroutine(Exec2());
 
     }
@@ -102,15 +102,7 @@ public class enemy3_7 : MonoBehaviour {
 
         if (enemy3_8.flg == 2)//定位置に着いた後、横移動
         {
-            if (cnt2 < 50)
-            {
-                cnt2++;
-                transform.position += new Vector3(0.04f, 0f, 0f) * Time.deltaTime * Speed;
-                if (cnt2 == 50)
-                {
-                    cnt2 = 0;
-                }
-            }
+            
             if (cnt2 < 180)
             {
                 cnt2++;
