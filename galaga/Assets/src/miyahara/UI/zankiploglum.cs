@@ -3,28 +3,41 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class zankiploglum: MonoBehaviour
+public class zankiploglum : MonoBehaviour
 {
     public GameObject original;
-    public GameObject copied;　 //残機
-    public GameObject copied2;  //残機２
+    public GameObject zanki1;　 //残機
+    public GameObject zanki2;  //残機2
+    public static int  Player;  //プレイヤー
     // Use this for initialization
     void Start()
     {
-        copied = Instantiate(original) as GameObject;    //左側の残機
-        copied2 = Instantiate(original) as GameObject;　//右側の残機
-        copied2.transform.position = new Vector3(6.2f,-2.12f,0);
+        //Player_zanki = 3;
         //copied.transform.Translate(2, 0, 0);
+        var wreckClone = Instantiate(wreck, transform.position, transform.rotation);
     }
-    // Update is called once per frame
+
     void Update()
     {
-       
+        if (Player.player == 2);
         {
-            Destroy(copied2, 4f);
-
-            //if(bullet ) ←弾に当たった時の処理
+            Destroy(zanki2);
         }
+        if (Player.player == 1);
+        {
+            Destroy(zanki1);
+        }
+        
+
     }
+
+
 }
-    
+       
+   //void OntriggerEnter2D(other)
+    //{
+
+  // }
+
+
+
