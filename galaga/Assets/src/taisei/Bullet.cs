@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour {
 		transform.Translate (0, 0.3f, 0);	//0.3ずつ上に飛ぶ
 
 		if (transform.position.y > 6) {
-			Player.count--;					//弾のカウントを減らす
+			player.count--;					//弾のカウントを減らす
 			Destroy (this.gameObject);		//弾を消す
 		}
 	}

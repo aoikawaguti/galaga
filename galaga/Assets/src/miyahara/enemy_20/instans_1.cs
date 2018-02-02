@@ -6,13 +6,14 @@ public class instans_1 : MonoBehaviour {
    
     public GameObject[] enemy_2;
     //敵を格納
+  
    
     //アクティブ最大数
     public int maxEnemy2 = 4;
     
    
     public int enemyCount;
-    public int enemytype=0;
+   
    
     // Use this for initialization
     void Start () {
@@ -27,19 +28,24 @@ public class instans_1 : MonoBehaviour {
     {
         while (enemyCount < maxEnemy2)
         {
-          
-            Generate();
             yield return new WaitForSeconds(0.1f);
+            Generate();
            
         }
     }
     void Generate()
     {
                 //敵を作成する
+
 		Instantiate(enemy_2[enemyCount]);
 		enemyCount++;
+
+                Instantiate(enemy_2[enemyCount]);
+            enemyCount++;
+
                 
     }
+   
     
     // Update is called once per frame
     void Update()

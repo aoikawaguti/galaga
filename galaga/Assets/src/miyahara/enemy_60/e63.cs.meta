@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: 4b1c4ac7d648abe41af93d1b78ef5ebc
-timeCreated: 1511165185
+timeCreated: 1515460776
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - bullet_teki: {instanceID: 0}
+  - StandbySprite: {fileID: 21300002, guid: f27e06f6d52041b4f864e7e6a060cc6a, type: 3}
+  - HoldSprite: {fileID: 21300000, guid: f27e06f6d52041b4f864e7e6a060cc6a, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
